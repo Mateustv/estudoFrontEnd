@@ -1,0 +1,41 @@
+.introducao-sobre {
+  background: url(../Img/bg-sobre.jpg) no-repeat center;
+  background-size: cover;
+}
+.missao-sobre {
+  padding-top: 60px;
+}
+.foto-equipe {
+  padding-top: 40px;
+}
+.missao-sobre p {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 1em;
+  margin-right: 60px;
+}
+.missao-sobre ul li {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 30px;
+}
+/*Qualidade*/
+.qualidade-sobre h2 {
+  padding: 60px 0 5px 0;
+}
+.qualidade-sobre::after {
+  content: "";
+  width: 634px;
+  height: 83px;
+  display: block;
+  background: url(../Img/linhas.svg) no-repeat center;
+  position: relative;
+  top: -230px;
+  right: -444px;
+  z-index: -1;
+}
+
+.qualidade-sobre img {
+  margin: 0 auto;
+  overflow: auto;
+}
