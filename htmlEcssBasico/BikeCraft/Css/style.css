@@ -229,7 +229,7 @@ img {
 
 /*Qualidade*/
 .qualidade h2 {
-  padding: 60px 0 5px 0;
+  padding: 20px;
 }
 .qualidade::after {
   content: "";
@@ -239,7 +239,7 @@ img {
   background: url(../Img/linhas.svg) no-repeat center;
   position: relative;
   top: -330px;
-  right: -444px;
+  right: -164px;
   z-index: -1;
 }
 
