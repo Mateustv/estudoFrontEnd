@@ -1,3 +1,3 @@
 # estudoFrontEnd
-Estou aprendendo HTML, JS, CSS, Adobe XD, React
+Começando um projento em HTML e CSS
 
