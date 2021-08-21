@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+}
+body {
+  background-color: rgb(221, 221, 221);
+  font-family: "helvetica Neue", Helvetica, Arial, sans-;
+}
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  align-items: center;
+  box-shadow: black 0 0 10px;
+  padding: 0 20px;
+}
+
+.titulo {
+  text-transform: lowercase;
+  letter-spacing: -3px;
+}
+.titulo span:first-child {
+  color: rgb(52, 91, 196);
+}
+.titulo span:last-child {
+  font-size: 13px;
+  letter-spacing: normal;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+.menu > li {
+  position: relative;
+}
+.menu > li a {
+  text-decoration: none;
+  color: rgb(221, 221, 221);
+  padding: 21px;
+  display: block;
+}
+
+.menu > li:hover {
+  background: rgb(52, 91, 196);
+}
+
+.menu > li:hover > .submenu,
+.submenu > li:hover > .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: rgb(52 91 196);
+  list-style: none;
+  color: #fff;
+  min-width: 120%;
+}
+.submenu li {
+  padding: 21px;
+}
+
+.submenu li:hover {
+  background: rgb(16, 56, 165);
+}
+
+.submenu > li {
+  position: relative;
+}
+
+.submenu > li > .submenu {
+  left: 100%;
+  top: 0px;
+}

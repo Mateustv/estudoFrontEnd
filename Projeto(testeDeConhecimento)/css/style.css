@@ -1,0 +1,88 @@
+*,
+a,
+ul,
+li {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-image: url("img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.imgLogo {
+  width: 100px;
+  display: block;
+  margin: 50px auto 20px auto;
+}
+h1 {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+}
+h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 30px;
+}
+p {
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.formulario {
+  color: #fff;
+}
+.checkBox {
+  display: inline;
+  text-align: center;
+  align-self: center;
+}
+.checkBox label {
+  margin-left: 50px;
+}
+.entradas {
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 10px 7px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 6px;
+}
+.btn {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(54, 54, 236, 0.938);
+  color: white;
+}
+.btn:hover {
+  background-color: blue;
+}
+.labelTeste {
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
+}
+.check {
+  display: inline-block;
+  position: absolute;
+  top: 356px;
+}

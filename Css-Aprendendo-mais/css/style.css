@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  text-align: center;
+  padding: 50px 0;
+  background-color: gray;
+  font-size: 40px;
+  background-image: url("/img/livros.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+}
+.title img {
+  height: 100px;
+}
+
+.navbar {
+  width: 30%;
+  padding: 20px;
+}
+.navbar ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  background: rgb(202, 147, 147);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px 0 5px 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+.content {
+  width: 70%;
+  padding: 40px;
+  background: #fff;
+  /* border-radius: 40px 0 0 0; */
+  box-shadow: 0 0 5px rgba(0, 0, 0);
+}
+.content h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.footer {
+  background: rgb(240, 130, 130);
+  padding: 40px;
+  text-align: center;
+}
