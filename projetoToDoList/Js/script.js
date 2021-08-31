@@ -1,9 +1,15 @@
 const Main = {
   
+  task: [],
+
   init: function() {
     this.cacheSelectors()
     this.bindEvents()
+    this.getStorage()
+    this.buildTask()
   },
+  
+  
   cacheSelectors: function(){                                                    //Seleciona minhas tags
     this.$checkButtons = document.querySelectorAll('.check')                     // colocando os $ para identificar que são tags
     this.$inputTask = document.querySelector("#inputTask")                       // Selecionando o input(footer)
@@ -19,10 +25,45 @@ const Main = {
     });
     this.$inputTask.addEventListener('keypress',self.Events.inputTask_keypress.bind(this)); //Ao apertar uma tecla execute a função
     this.$buttonRemove.forEach(function(button){                                            // para cada clicle no botão de remover execute a funçào
-      button.addEventListener('click', self.Events.remove_button)
+      button.addEventListener('click', self.Events.remove_button.bind(self))
     })
   },
+  
+  
+  getStorage: function (){
+    const valueTasks = localStorage.getItem('task')
+    if(valueTasks){
+      this.task = JSON.parse(valueTasks)
+    }else{
+      localStorage.setItem('task', JSON.stringify([]))
+    }
+  },
+  
 
+  getTaskHtml: function(task){ 
+    return`
+      <li>
+        <div class="check"></div>            
+        <label class="task">
+          ${task}
+        </label>
+        <button class="remove" data-task = "${task}"></button>
+      </li>
+    `
+  },
+  
+  buildTask: function(){ 
+    let html = ''
+    this.task.forEach(value => {
+      html += this.getTaskHtml(value.task)
+    })
+    this.$listValue.innerHTML = html
+
+    this.cacheSelectors()
+    this.bindEvents()
+  },
+
+  
   Events:{                                                                      //Criar as funções para ser utilizadas
     checkButton_click: function (e){                                            // definindo a função
       const li = e.target.parentElement                                         // Selecionado o pai do target que no caso é o li
@@ -32,30 +73,38 @@ const Main = {
       }
       li.classList.remove('done')
     },
+    
     inputTask_keypress: function (e){ 
       const key = e.key                                                         //Salvando o nome da tecla precionada
       const value = e.target.value                                              // Salvando os valores das teclas na caixa de input
-      // console.log(key)
       if (value === ''){
         return                                                                   // Caso o input esteja vazio não adiconar tarefa
       }
-      if(key === 'Enter'){                                                        // Caso tiver e for precionado o botão enter, adicionar a lista com o valor do input 
-        this.$listValue.innerHTML += `
-          <li>
-            <div class="check"></div>            
-            <label class="task">
-              ${value}
-            </label>
-            <button class="remove"></button>
-          </li>
-        `
+      if(key === 'Enter'){                                                        // Caso tiver e for precionado o botão enter, adicionar a lista co 
+        this.$listValue.innerHTML += this.getTaskHtml(value) 
         e.target.value = ''                                               // deixa o input vazio depois
         this.cacheSelectors()                                             // Chama as funções, porque ao adiconar os itens novos os eventos somem
-        this.bindEvents()
-      } 
+        this.bindEvents()        
+        
+        const savedTasks = localStorage.getItem('task')
+        const savedTasksArr = JSON.parse(savedTasks)
+          
+          const arrTask = [
+            {task: value},...savedTasksArr,
+          ]
+          const jsonTask = JSON.stringify(arrTask)
+          this.task = arrTask
+          localStorage.setItem('task', jsonTask) 
+      }
     },
+    
     remove_button: function (e){ 
       const hideLi = e.target.parentElement
+      const value = e.target.dataset['task']
+      console.log(value)
+      const removeLocalStorage = this.task.filter(withDrawValue => withDrawValue.task !== value)
+      localStorage.setItem('task',JSON.stringify(removeLocalStorage))
+      
       hideLi.classList.add('remove')
       setTimeout(function(){
         hideLi.classList.add('hidden')
