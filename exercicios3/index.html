@@ -6,22 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .ok {
+      display: none;
+    }
+
+    .arrumar {
+      width: 30px
+    }
+  </style>
 </head>
 
 <body>
-  <div id="mensagem"></div>
+  <p id="textos"></p>
+  <form id="formulario">
+    <input type="text" name="texto" placeholder="Digite algo">
+    <button type="submit" name="valeu">Enviar</button>
+    <img src="loading.gif" alt="carregando" class="ok arrumar" name="carregando">
+  </form>
 
+  <!-- <div id="mensagem"></div>
   <ul id="listaAlunos"></ul>
-
-
   <form id="formulario">
     <label>Digite uma nota para filtrar os alunos</label>
     <input name="textoNota" type="text" placeholder="Nota">
     <button type="submit">Filtrar</button>
-  </form>
+  </form> -->
   <!-- <script src="ex1_map.js"></script> -->
   <!-- <script src="ex2_filter.js"></script> -->
-  <script src="ex4_alittleofall.js"></script>
+  <script src="ex5promises2.js"></script>
 </body>
 
 </html>
